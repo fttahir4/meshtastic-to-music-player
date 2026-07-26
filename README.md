@@ -1,4 +1,4 @@
-# DeMeshtify: Turning your Meshtastic node into a Spotify Music Player (Displays Only) 🎵
+# DeMeshtify: Turning your Meshtastic node into a Spotify Music Player (Displays Only) 
 
 Turn a Meshtastic-flashed Heltec WiFi LoRa 32 (V3/V4) node into a live Spotify
 "now playing" display. Wipes the mesh firmware and replaces it with a custom
