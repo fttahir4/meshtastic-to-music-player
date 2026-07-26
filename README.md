@@ -67,7 +67,15 @@ python3 get_spotify_token.py
 Fill in your Client ID and Secret in the script first. It'll open your
 browser for a one-time login/approval, then print a refresh token, save it.
 
-### 4. Flash the board
+### 4. Confirm the mesh firmware is gone (optional but recommended)
+
+Flash `heltec_v4_hello.ino` first — a tiny test sketch that prints a message
+to the OLED. If you see it on the screen instead of the Meshtastic menu,
+you've confirmed the board is fully out of mesh firmware and ready for the
+main sketch. This step also verifies your board/port setup is correct before
+moving on to the full project.
+
+### 5. Flash the board
 
 1. Open `spotify_now_playing.ino` in Arduino IDE
 2. Fill in the placeholders near the top: wifi network(s), Spotify Client ID,
@@ -79,6 +87,33 @@ browser for a one-time login/approval, then print a refresh token, save it.
 If the upload fails to connect, hold the **PRG** button, plug in the USB
 cable while still holding it, release after a couple seconds, then try
 uploading again.
+
+## Fully removing Meshtastic
+
+Uploading any Arduino sketch (including the ones in this repo) already
+overwrites the Meshtastic firmware — there's no separate "uninstall" step
+needed. Once you've flashed `heltec_v4_hello.ino` or the main sketch, the
+board is no longer running Meshtastic in any form.
+
+If you ever want a completely blank slate before flashing something new
+(not required, just extra-clean), you can do a full flash erase first using
+[`esptool`](https://docs.espressif.com/projects/esptool/):
+
+```
+esptool.py erase_flash
+```
+
+### Reinstalling Meshtastic later
+
+If you want to put Meshtastic back on the board:
+
+1. Go to [flasher.meshtastic.org](https://flasher.meshtastic.org) in Chrome
+   or Edge (requires WebSerial support)
+2. Plug in the board
+3. Select **Heltec WiFi LoRa 32 V3** from the board dropdown (same profile
+   works for V4)
+4. Pick the latest stable firmware release
+5. Click **Flash**
 
 ## Notes on limitations
 
