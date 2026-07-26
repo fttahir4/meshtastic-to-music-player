@@ -5,7 +5,7 @@ Turn a Meshtastic-flashed Heltec WiFi LoRa 32 (V3/V4) node into a live Spotify
 build that shows a spinning disk icon, scrolling track info, a live progress
 bar, playback status icons, and an idle clock with recent-play history.
 
-Built and named **Fanizza FM** (Lol) on the original hardware this project runs on.
+Built and named **Fanizza FM/Faz FM** (Lol) on the original hardware this project runs on.
 
 ## Features
 
